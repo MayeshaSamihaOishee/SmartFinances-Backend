@@ -4,14 +4,14 @@ const app = express();
 const bodyParser = require("body-parser");
 const cookieParser = require("cookie-parser");
 const cors = require("cors");
+
 //import routes here
-const authRoutes = require("./routes/auth");
+const authRoutes = require("./routes/user/userAuth");
 
 //DB Connection
 //This is local DB connection
 //Change this address to cloud host
 const db = "mongodb://localhost:27017/smartfinances";
-
 mongoose
   .connect(db, {
     useNewUrlParser: true,
