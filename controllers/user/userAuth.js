@@ -45,14 +45,15 @@ exports.signin = (req, res) => {
       });
     }
 
-    if (!user.authenticate(password)) {
+    //fix bug here --> !user.authenticate --> email & password mismatch not working
+    if (user.authenticate(password)) {
       return res.status(401).json({
         error: " Email & password do not match",
       });
     }
 
     //Create token
-    const token = jwt.sign({ _id: user._id }, process.env.SECRET);
+    const token = jwt.sign({ _id: user._id }, "smartfinances");
     //Put token in cookie
     res.cookie("token", token, { expire: new Date() + 9999 });
 

@@ -10,7 +10,7 @@ const {
 } = require("../../controllers/user/userAuth");
 
 router.post(
-  "/signup",
+  "/signup/user",
   //using express validator to validate in routes
   [
     check("name")
@@ -25,7 +25,7 @@ router.post(
 );
 
 router.post(
-  "/signin",
+  "/signin/user",
   //using express validator to validate in routes
   [
     check("email").isEmail().withMessage("email is required"),
@@ -36,6 +36,5 @@ router.post(
   signin
 );
 
-router.get("/signout", signout);
-
+router.get("/signout/user", signout);
 module.exports = router;
