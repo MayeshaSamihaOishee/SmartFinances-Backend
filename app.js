@@ -8,6 +8,7 @@ const cors = require("cors");
 //import routes here
 const userAuthRoutes = require("./routes/user/userAuth");
 const adminAuthRoutes = require("./routes/admin/adminAuth");
+const newTransaction = require("./routes/user/newTransaction");
 const userDashboard = require("./routes/user/userDashboard");
 
 //DB Connection
@@ -41,6 +42,7 @@ app.use(cors());
 //Routes here
 app.use("/api", userAuthRoutes);
 app.use("/api", adminAuthRoutes);
+app.use("/api", newTransaction);
 app.use("/api", userDashboard);
 
 //Port
