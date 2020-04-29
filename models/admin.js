@@ -32,7 +32,7 @@ var adminSchema = new Schema(
 );
 
 //virtual field
-userSchema
+adminSchema
   .virtual("password")
   .set(function (password) {
     this._password = password;
@@ -44,7 +44,7 @@ userSchema
   });
 
 //This function converts plain password given to a encrypted string (password) refer : https://nodejs.org/api/crypto.html
-userSchema.methods = {
+adminSchema.methods = {
   authenticate: function (plainpassword) {
     return this.securePassword(plainpassword) === this.encry_password;
   },
