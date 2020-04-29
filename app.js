@@ -13,7 +13,11 @@ const userDashboard = require("./routes/user/userDashboard");
 //DB Connection
 //This is local DB connection
 //Change this address to cloud host
-const db = "mongodb://localhost:27017/smartfinances";
+//const db = "mongodb://localhost:27017/smartfinances";
+//Cloud DB connection
+const db =
+  "mongodb+srv://mayeshaUser:mangopass@firstcluster-hrstd.mongodb.net/test?retryWrites=true&w=majority";
+
 mongoose
   .connect(db, {
     useNewUrlParser: true,
