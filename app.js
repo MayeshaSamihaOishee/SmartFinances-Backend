@@ -8,6 +8,7 @@ const cors = require("cors");
 //import routes here
 const userAuthRoutes = require("./routes/user/userAuth");
 const adminAuthRoutes = require("./routes/admin/adminAuth");
+const userDashboard = require("./routes/user/userDashboard");
 
 //DB Connection
 //This is local DB connection
@@ -36,6 +37,7 @@ app.use(cors());
 //Routes here
 app.use("/api", userAuthRoutes);
 app.use("/api", adminAuthRoutes);
+app.use("/api", userDashboard);
 
 //Port
 const port = process.env.PORT || 8000;
