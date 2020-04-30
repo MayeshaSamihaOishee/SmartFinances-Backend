@@ -3,39 +3,55 @@ var Schema = mongoose.Schema;
 
 var AdminNewUser = new Schema(
     {
-        fundId : {
+        accountNumber : {
             type : Number,
             required : true,
             trim : true,
             unique : true,
-        },
-        fundTitle : {
-            type : String,
-            required : true,
-            trim : true,
-            minlength : 2,
+
 
         },
-        fundType : {
+        emailId : {
             type : String,
             required : true,
-            
+            unique : true,
         },
-        returnOfInvestment : {
+        firstName : {
+            type : String,
+            required : true,
+
+        },
+        lastName : {
+            type : String,
+            required : true,
+
+        },
+        bankName : {
+            type : String,
+            trim : true,
+            
+
+        },
+        address : {
+            type : String,
+            trim : true,
+        },
+        tfnNumber : {
             type : Number,
             required : true,
-            
+            trim : true,
         },
-        description : {
-            type : String,
+        phoneNumber : {
+            type : Number,
             required : true,
             trim : true,
-            maxlength : 2000,
-
         },
-
+        openingBalance : {
+            type : Number,
+        },
 
     },
 );
 
 module.exports = mongoose.model("AdminNewUser", AdminNewUser);
+

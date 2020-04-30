@@ -12,6 +12,7 @@ const adminAuthRoutes = require("./routes/admin/adminAuth");
 const newTransaction = require("./routes/user/newTransaction");
 const userDashboard = require("./routes/user/userDashboard");
 const adminCreateFund = require("./routes/admin/createFund");
+const adminCreateUser = require("./routes/admin/createNewUser");
 
 //DB Connections
 //This is local DB connection
@@ -50,6 +51,8 @@ app.use("/api", adminAuthRoutes);
 app.use("/api", newTransaction);
 app.use("/api", userDashboard);
 app.use("/api", adminCreateFund);
+app.use("/api", adminCreateUser);
+
 
 
 //Port
