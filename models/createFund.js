@@ -1,7 +1,7 @@
 const mongoose = require("mongoose");
 var Schema = mongoose.Schema;
 
-var AdminNewUser = new Schema(
+var AdminNewFund = new Schema(
     {
         fundId : {
             type : Number,
@@ -38,4 +38,4 @@ var AdminNewUser = new Schema(
     },
 );
 
-module.exports = mongoose.model("AdminNewUser", AdminNewUser);
+module.exports = mongoose.model("AdminNewFund", AdminNewFund);
