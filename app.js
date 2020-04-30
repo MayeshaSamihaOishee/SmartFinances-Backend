@@ -1,3 +1,4 @@
+
 const mongoose = require("mongoose");
 const express = require("express");
 const app = express();
@@ -10,12 +11,14 @@ const userAuthRoutes = require("./routes/user/userAuth");
 const adminAuthRoutes = require("./routes/admin/adminAuth");
 const newTransaction = require("./routes/user/newTransaction");
 const userDashboard = require("./routes/user/userDashboard");
+const adminCreateFund = require("./routes/admin/createFund");
 
-//DB Connection
+//DB Connections
 //This is local DB connection
 //Change this address to cloud host
 //const db = "mongodb://localhost:27017/smartfinances";
 //Cloud DB connection
+
 const db =
   "mongodb+srv://mayeshaUser:mangopass@firstcluster-hrstd.mongodb.net/test?retryWrites=true&w=majority";
 
@@ -34,6 +37,8 @@ mongoose
     console.log("DB CONNECTION ERROR");
   });
 
+  
+
 //Middlewares
 app.use(bodyParser.json());
 app.use(cookieParser()); //used to put or delete some values into the cookies
@@ -44,6 +49,8 @@ app.use("/api", userAuthRoutes);
 app.use("/api", adminAuthRoutes);
 app.use("/api", newTransaction);
 app.use("/api", userDashboard);
+app.use("/api", adminCreateFund);
+
 
 //Port
 const port = process.env.PORT || 8000;
