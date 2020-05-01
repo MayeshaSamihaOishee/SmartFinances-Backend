@@ -1,4 +1,3 @@
-
 const mongoose = require("mongoose");
 const express = require("express");
 const app = express();
@@ -13,6 +12,7 @@ const newTransaction = require("./routes/user/newTransaction");
 const userDashboard = require("./routes/user/userDashboard");
 const adminCreateFund = require("./routes/admin/createFund");
 const adminCreateUser = require("./routes/admin/createNewUser");
+const fundOptions = require("./routes/user/userFundOptions");
 
 //DB Connections
 //This is local DB connection
@@ -38,8 +38,6 @@ mongoose
     console.log("DB CONNECTION ERROR");
   });
 
-  
-
 //Middlewares
 app.use(bodyParser.json());
 app.use(cookieParser()); //used to put or delete some values into the cookies
@@ -52,8 +50,7 @@ app.use("/api", newTransaction);
 app.use("/api", userDashboard);
 app.use("/api", adminCreateFund);
 app.use("/api", adminCreateUser);
-
-
+app.use("/api", fundOptions);
 
 //Port
 const port = process.env.PORT || 8000;
